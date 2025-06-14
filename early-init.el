@@ -147,4 +147,5 @@
     ;; may not be a Doom config).
     (load user-init-file 'noerror (not init-file-debug) nil 'must-suffix)))
 
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
 ;;; early-init.el ends here
