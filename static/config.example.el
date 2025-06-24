@@ -74,3 +74,21 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+;; My custom configurations.
+;;
+;; uv-mode config
+(use-package! uv-mode
+  :hook (python-mode . uv-mode-auto-activate-hook))
+
+;; verb
+(use-package! org
+  :mode ("\\.org\\'" . org-mode)
+  :config (define-key org-mode-map (kbd "C-c C-r") verb-command-map))
+
+;; Dockerfile auto format has some issues.
+(setq +format-on-save-disabled-modes
+      '(dockerfile-mode))
+
+;; Disable auto parenthesis insert on function completion.
+(setq! lsp-enable-snippet nil)
