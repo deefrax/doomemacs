@@ -92,3 +92,6 @@
 
 ;; Disable auto parenthesis insert on function completion.
 (setq! lsp-enable-snippet nil)
+
+;; Use ruff for formattings and import sortting by default.
+(setq-hook! '(python-mode-hook python-ts-mode-hook) +format-with '(ruff-isort ruff))
